@@ -11,6 +11,8 @@ H: help
 
 KinectSDK-v1.7
 
+OpenNI-v2.2
+
 NiTE-v2.0.0
 
 SimpleOpenNI-v1.96
