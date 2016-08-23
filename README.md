@@ -1,7 +1,7 @@
 EffectManager
 ===============
 
-Manager of effects driven by Kinect and Sound Analisis
+Processing 2: Manager of effects driven by Kinect and Sound Analisis
 
 --- Keyboard Command ---
 
