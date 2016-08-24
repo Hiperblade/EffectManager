@@ -14,6 +14,7 @@ void setup() {
   addEffect('3', new RainRepeller());
   addEffect('4', new Rectangle());
   addEffect('5', new Rotation3D());
+  addEffect('6', new Flag());
 }
 
 private void addEffect(char key, IEffect effect) {
