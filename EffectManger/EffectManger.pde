@@ -15,6 +15,7 @@ void setup() {
   addEffect('4', new Rectangle());
   addEffect('5', new Rotation3D());
   addEffect('6', new Flag());
+  addEffect('7', new CherryTree());
 }
 
 private void addEffect(char key, IEffect effect) {
