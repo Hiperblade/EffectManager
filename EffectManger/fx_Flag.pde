@@ -4,7 +4,7 @@ public class Flag implements IEffect {
   float shift = 0;
   float dim = 100;
   float scale = 8;
-  float gain = 1;
+  float gain = 2;
 
   public Flag() {
   }
