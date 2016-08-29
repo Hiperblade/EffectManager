@@ -27,30 +27,41 @@ public class Flag implements IEffect {
       active = !active;
     }
     */
-    translate(width/2, height/2, 0);
-    rotateX(10.8);
-    scale(0.5);
-    
     background(0);
     strokeWeight(2);
     noFill();
-
+    scale(0.5);
+    stroke(255, 255, 255);
+    
+    translate(0, 0, -400);
+            
+    translate(width, height, 0);
+    rotateY(PI / 4);
     // DEBUG
-    //rect(-200,-200,width, height);
+    //rect(-dim * scale, -dim / 2 * scale, dim * scale, dim * scale);
+
+    drawFlag(gain);
+
+    rotateY(-PI / 2 + PI);
+    // DEBUG
+    //rect(-dim * scale, -dim / 2 * scale, dim * scale, dim * scale);
+
+    drawFlag(-gain);
+    
+    PVector r = source.getPosition(RIGHT_HAND);
+    PVector l = source.getPosition(LEFT_HAND);
+    gain = map(r.dist(l), 0, width, 1, 5);
+    
+    shift += 0.01;
+  }
   
+  private void drawFlag(float gain){
     for(int x = 0; x < dim; x++)
     {
       for(int y = 0; y < dim; y++)
       {
-        stroke(255, 255, 255);
-        point((x - (dim / 2)) * scale, (y - (dim / 2)) * scale, - map(noise(shift + x * step, shift + y * step), 0, 1, -1, 1) * dim * gain);
+        point((x - dim) * scale, (y - (dim / 2)) * scale, - map(noise(shift + x * step, shift + y * step), 0, 1, -1, 1) * dim * gain);
       }
     }
-    shift += 0.01;
-    
-    PVector r = source.getPosition(RIGHT_HAND);
-    PVector l = source.getPosition(LEFT_HAND);
-    gain = map(r.dist(l), 0, width, 1, 5); 
   }
 }
- 
